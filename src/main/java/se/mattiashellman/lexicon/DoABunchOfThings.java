@@ -1,8 +1,5 @@
 package se.mattiashellman.lexicon;
 
-import java.util.Random;
-import java.util.Scanner;
-
 public class DoABunchOfThings {
 
     private static int guessInput = 0;
