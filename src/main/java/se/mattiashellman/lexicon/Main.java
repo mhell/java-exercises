@@ -6,23 +6,24 @@ public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        while(true) {
-            System.out.println(
-                    "Hello! What do you want to do? \n" +
-                    "1. Say hello to me. \n" +
-                    "2. Check if a year is a leap year or not \n" +
-                    "3. Do arithmetics of two numbers \n" +
-                    "4. Calculate the average of three numbers \n" +
-                    "5. Be greeted! \n" +
-                    "6. Do arithmetics of ANY two numbers \n" +
-                    "7. Convert seconds to hours, minutes and seconds \n" +
-                    "8 Guess the number");
+        showMenu();
+    }
+
+    private static void showMenu() {
+        do {
+            System.out.println("Hello! What do you want to do? \n" +
+                            "1. Say hello to me. \n" +
+                            "2. Check if a year is a leap year or not \n" +
+                            "3. Do arithmetics of two numbers \n" +
+                            "4. Calculate the average of three numbers \n" +
+                            "5. Be greeted! \n" +
+                            "6. Do arithmetics of ANY two numbers \n" +
+                            "7. Convert seconds to hours, minutes and seconds \n" +
+                            "8 Guess the number");
             System.out.print("> ");
             executeMethod(scanner.nextLine());
             System.out.println("Continue? (y/n)");
-            if(scanner.nextLine().equalsIgnoreCase("n"))
-                break;
-        }
+        } while (!scanner.nextLine().equalsIgnoreCase("n"));
     }
 
     private static void executeMethod(String choice) {
