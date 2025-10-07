@@ -30,7 +30,7 @@ public class DoABunchOfThings {
     public static String arithmetics(int a, int b) {
         return  a + " + " + b + " = " + (a+b) + "\n" +
                 a + " * " + b + " = " + (a*b) + "\n" +
-                a + " / " + b + " = " + ((float)a/(float)b) + "\n" +
+                a + " / " + b + " = " + ((float)a/b) + "\n" +
                 a + " - " + b + " = " + (a-b);
     }
 
