@@ -2,7 +2,7 @@ package se.mattiashellman.lexicon;
 
 import java.util.Scanner;
 
-public class Main {
+public class BasicExercises {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -11,15 +11,16 @@ public class Main {
 
     private static void showMenu() {
         do {
-            System.out.println("Hello! What do you want to do? \n" +
-                            "1. Say hello to me. \n" +
-                            "2. Check if a year is a leap year or not \n" +
-                            "3. Do arithmetics of two numbers \n" +
-                            "4. Calculate the average of three numbers \n" +
-                            "5. Be greeted! \n" +
-                            "6. Do arithmetics of ANY two numbers \n" +
-                            "7. Convert seconds to hours, minutes and seconds \n" +
-                            "8 Guess the number");
+            System.out.println("""
+                    Hello! What do you want to do?\s
+                    1. Say hello to me.\s
+                    2. Check if a year is a leap year or not\s
+                    3. Do arithmetics of two numbers\s
+                    4. Calculate the average of three numbers\s
+                    5. Be greeted!\s
+                    6. Do arithmetics of ANY two numbers\s
+                    7. Convert seconds to hours, minutes and seconds\s
+                    8 Guess the number""");
             System.out.print("> ");
             executeMethod(scanner.nextLine());
             System.out.println("Continue? (y/n)");
