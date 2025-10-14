@@ -2,6 +2,7 @@ package se.mattiashellman.lexicon;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 import java.util.Locale;
 
 public class TimeExercises {
@@ -79,5 +80,26 @@ public class TimeExercises {
         localTime = localDateTime.toLocalTime();
         System.out.printf("Date: %s, Time: %s", localDate.toString(), localTime.toString());
 
+        // Calendar
+        System.out.println("\n\nCalendar for 2018\n-----------------");
+        LocalDate year2018 = LocalDate.ofYearDay(2018, 1);
+        int numberOfWeeks = LocalDate.of(year2018.getYear(), 12, 31).get(ChronoField.ALIGNED_WEEK_OF_YEAR);
+        for (Month month : Month.values()) {
+            // print month
+            System.out.println(month);
+            for (int week=1; week <= numberOfWeeks; week++) {
+                // print week
+                System.out.println(week);
+                for (DayOfWeek weekday : DayOfWeek.values()) {
+                    if (year2018.getDayOfWeek() == weekday) {
+                        // print week
+                        System.out.print(year2018.getDayOfMonth());
+                    } else {
+                        System.out.print(" ");
+                    }
+                    year2018 = year2018.plusDays(1);
+                }
+            }
+        }
     }
 }
