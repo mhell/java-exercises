@@ -91,7 +91,7 @@ public class TimeExercises {
             // print month
             System.out.println(month.name());
             // print headers
-            System.out.println("Vecka\tmå\tti\ton\tto\tfr\tlö\tsö");
+            System.out.println("Week\tMo\tTu\tWe\tTh\tFr\tSa\tSu");
             for (int currentMonth = date.getMonthValue(); currentMonth == date.getMonthValue(); ) {
                 // print week
                 System.out.print("  " + date.get(WeekFields.ISO.weekOfWeekBasedYear()) + "  \t");
