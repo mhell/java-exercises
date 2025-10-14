@@ -94,7 +94,7 @@ public class TimeExercises {
             System.out.println("Week\tMo\tTu\tWe\tTh\tFr\tSa\tSu");
             for (int currentMonth = date.getMonthValue(); currentMonth == date.getMonthValue(); ) {
                 // print week
-                System.out.print("  " + date.get(WeekFields.ISO.weekOfWeekBasedYear()) + "  \t");
+                System.out.print(" " + date.get(WeekFields.ISO.weekOfWeekBasedYear()) + "  \t");
                 for (DayOfWeek weekday : DayOfWeek.values()) {
                     if (date.getDayOfWeek() != weekday) {
                         System.out.print("\t");
