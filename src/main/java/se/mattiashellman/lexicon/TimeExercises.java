@@ -2,7 +2,7 @@ package se.mattiashellman.lexicon;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoField;
+import java.time.temporal.WeekFields;
 import java.util.Locale;
 
 public class TimeExercises {
@@ -81,25 +81,35 @@ public class TimeExercises {
         System.out.printf("Date: %s, Time: %s", localDate.toString(), localTime.toString());
 
         // Calendar
-        System.out.println("\n\nCalendar for 2018\n-----------------");
-        LocalDate year2018 = LocalDate.ofYearDay(2018, 1);
-        int numberOfWeeks = LocalDate.of(year2018.getYear(), 12, 31).get(ChronoField.ALIGNED_WEEK_OF_YEAR);
+        calander(2025);
+    }
+
+    private static void calander(int year) {
+        System.out.println("\n\nCalendar for " + year + "\n-----------------");
+        LocalDate date = LocalDate.ofYearDay(year, 1);
         for (Month month : Month.values()) {
             // print month
-            System.out.println(month);
-            for (int week=1; week <= numberOfWeeks; week++) {
+            System.out.println(month.name());
+            // print headers
+            System.out.println("Vecka\tmå\tti\ton\tto\tfr\tlö\tsö");
+            for (int currentMonth = date.getMonthValue(); currentMonth == date.getMonthValue(); ) {
                 // print week
-                System.out.println(week);
+                System.out.print("  " + date.get(WeekFields.ISO.weekOfWeekBasedYear()) + "  \t");
                 for (DayOfWeek weekday : DayOfWeek.values()) {
-                    if (year2018.getDayOfWeek() == weekday) {
-                        // print week
-                        System.out.print(year2018.getDayOfMonth());
+                    if (date.getDayOfWeek() != weekday) {
+                        System.out.print("\t");
                     } else {
-                        System.out.print(" ");
+                        // print day
+                        System.out.print(date.getDayOfMonth() + "\t");
+                        // increment the date
+                        date = date.plusDays(1);
+                        // end of month
+                        if (date.getDayOfMonth() == 1) break;
                     }
-                    year2018 = year2018.plusDays(1);
                 }
+                System.out.println();
             }
+            System.out.println();
         }
     }
 }
