@@ -9,11 +9,11 @@ public class BankAccount {
     private String phoneNumber;
 
     BankAccount(int balance, String customerName, String email, String phoneNumber) {
-        this.accountNumber = accountNumbers++;
-        this.balance = balance;
-        this.customerName = customerName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
+        setAccountNumber(accountNumbers++);
+        setBalance(balance);
+        setCustomerName(customerName);
+        setEmail(email);
+        setPhoneNumber(phoneNumber);
     }
 
     public int getAccountNumber() {
