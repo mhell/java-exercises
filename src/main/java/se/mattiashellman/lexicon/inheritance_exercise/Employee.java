@@ -1,4 +1,4 @@
-package se.mattiashellman.lexicon.InheritanceExercise;
+package se.mattiashellman.lexicon.inheritance_exercise;
 
 import java.time.LocalDate;
 
