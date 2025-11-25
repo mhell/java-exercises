@@ -47,10 +47,12 @@ class Product {
     }
 }
 
+@FunctionalInterface
 interface Conditional {
     boolean test(Product p);
 }
 
+@FunctionalInterface
 interface Action {
     void execute(Product p);
 }
